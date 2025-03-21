@@ -1,0 +1,11 @@
+def majorityElement(self, nums):
+        maj = None
+        count = 0
+        for x in nums:
+            if count == 0:
+                maj = x
+            if x == maj:
+                count += 1
+            else:
+                count -= 1  
+        return maj
