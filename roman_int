@@ -1,0 +1,33 @@
+''' Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.  '''  
+ def romanToInt(self, s):
+        roman_dict = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000,
+            'IV': 4,
+            'IX': 9,
+            'XL': 40,
+            'XC': 90,
+            'CD': 400,
+            'CM': 900
+        }
+
+        num = 0
+        i = 0
+
+        # Iterate through the string
+        while i < len(s):
+            # Check for subtractive pair
+            if i + 1 < len(s) and s[i:i+2] in roman_dict:
+                num += roman_dict[s[i:i+2]]
+                i += 2  # Skip the next character
+            else:
+                num += roman_dict[s[i]]
+                i += 1
+
+        return num
+
