@@ -1,0 +1,14 @@
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        
+        pre=strs[0]
+        if not strs:
+            pre=""
+        for x in strs[1:]:
+            while not x.startswith(pre):
+                pre=pre[:-1]
+            if not pre:
+                return ""
+        return pre
+
+         
