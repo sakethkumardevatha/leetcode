@@ -1,0 +1,10 @@
+def isPalindrome(s):
+        t=s.replace(" ","")
+        w=""
+        for x in t:
+            if x.isalnum():
+                w+=x
+        w=w.lower()
+        return (w==w[::-1])
+s="0a"
+print(isPalindrome(s))
