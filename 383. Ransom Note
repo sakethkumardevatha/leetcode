@@ -1,0 +1,14 @@
+class Solution(object):
+    def canConstruct(self, ransomNote, magazine):
+        """
+        :type ransomNote: str
+        :type magazine: str
+        :rtype: bool
+        """
+        mlist=list(magazine)
+        for c in ransomNote:
+            if c in mlist:
+                mlist.remove(c)
+            else:
+                return False
+        return True
