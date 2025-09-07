@@ -1,0 +1,19 @@
+class Solution:
+    def diagonalSum(self, mat: List[List[int]]) -> int:
+
+        total_sum = 0
+        matrix_size = len(mat)
+      
+
+        for row_index, current_row in enumerate(mat):
+
+            secondary_diagonal_col = matrix_size - row_index - 1
+          
+
+            total_sum += current_row[row_index]
+          
+
+            if secondary_diagonal_col != row_index:
+                total_sum += current_row[secondary_diagonal_col]
+      
+        return total_sum
